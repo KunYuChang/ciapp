@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+<?= $this->extend("layouts/default") ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
+<!-- Title -->
+<?= $this->section("title")?>Home<?= $this->endSection("title")?>
 
-<body>
-    <h1>Welcome</h1>
-</body>
-
-</html>
+<!-- Content -->
+<?= $this->section("content") ?>
+    <h1>Wellcome</h1>
+<?= $this->endSection() ?>

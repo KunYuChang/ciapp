@@ -15,36 +15,33 @@ $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
-// The Auto Routing (Legacy) is very dangerous. It is easy to create vulnerable apps
-// where controller filters or CSRF protection are bypassed.
-// If you don't want to define all routes, please use the Auto Routing (Improved).
-// Set `$autoRoutesImproved` to true in `app/Config/Feature.php` and set the following to true.
+
+// 自動路由 (Legacy) 非常危險。很容易建立易受攻擊的應用程式，
+// 其中控制器過濾器或 CSRF 保護會被繞過。
+// 如果您不想定義所有路由，請使用自動路由 (Improved)。
+// 在 `app/Config/Feature.php` 中將 `$autoRoutesImproved` 設為 true，並將以下設定設為 true。
 // $routes->setAutoRoute(false);
 
 /*
  * --------------------------------------------------------------------
- * Route Definitions
+ * 路由定義 (Route Definitions)
  * --------------------------------------------------------------------
  */
 
-// We get a performance increase by specifying the default
-// route since we don't have to scan directories.
+// 指定預設路由可提高效能，因為我們不必掃描目錄。
 $routes->get('/', 'Home::index');
 $routes->get('/articles', 'Articles::index');
 
 
 /*
  * --------------------------------------------------------------------
- * Additional Routing
+ * 其他路由
  * --------------------------------------------------------------------
  *
- * There will often be times that you need additional routing and you
- * need it to be able to override any defaults in this file. Environment
- * based routes is one such time. require() additional route files here
- * to make that happen.
+ * 有時您可能需要額外的路由，而且您需要它們能夠覆蓋此檔案中的任何預設值。
+ * 環境 based 路由就是其中一種情況。在此處 require() 額外的路由檔案以實現此目的。
  *
- * You will have access to the $routes object within that file without
- * needing to reload it.
+ * 您將在該檔案中取得 $routes 物件，而無需重新載入它。
  */
 if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
