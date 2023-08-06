@@ -8,7 +8,14 @@
 </head>
 
 <body>
+
+    <!-- Message -->
+    <?php if (session()->has("message")) : ?>
+        <p><?= session("message") ?></p>
+    <?php endif; ?>
+
     <?= $this->renderSection("content") ?>
+
 </body>
 
 </html>
