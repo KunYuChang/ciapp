@@ -33,6 +33,13 @@ class Articles extends BaseController
 
     public function create()
     {
-        dd($this->request->getPost());
+        $model = new ArticleModel;
+        $id = $model->insert($this->request->getPost());
+
+        if ($id === false) {
+            dd($model->errors());
+        }
+
+        dd($id);
     }
 }
