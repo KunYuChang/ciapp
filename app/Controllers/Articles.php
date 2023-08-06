@@ -8,10 +8,15 @@ class Articles extends BaseController
     public function index()
     {
         $model = new ArticleModel;
-        $data = $model->findAll(); // this method is inherited from the base model
+        $data = $model->findAll(); 
 
         return view("Articles/index", [
             "articles" => $data
         ]);
+    }
+
+    public function show($id) 
+    {
+        dd($id);
     }
 }
