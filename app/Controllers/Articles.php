@@ -37,7 +37,9 @@ class Articles extends BaseController
         $id = $model->insert($this->request->getPost());
 
         if ($id === false) {
-            return redirect()->back()->with("errors", $model->errors());
+            return redirect()->back()
+                ->with("errors", $model->errors())
+                ->withInput();
         }
 
         dd($id);
