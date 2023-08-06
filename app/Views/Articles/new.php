@@ -10,11 +10,15 @@
 
 <!-- Form -->
 <?= form_open("articles/create") ?>
+
 <label for="title">Title</label>
 <input type="text" id="title" name="title">
+
 <label for="content">Content</label>
-<input type="text" id="content" name="content">
+<textarea id="content" name="content"></textarea>
+
 <button>Save</button>
-<?= form_close() ?>
+
+</form>
 
 <?= $this->endSection() ?>
