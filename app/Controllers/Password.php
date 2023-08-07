@@ -38,6 +38,9 @@ class Password extends BaseController
         $model = new UserModel;
         $model->save($user);
 
+        // 儲存完之後要把 session magicLogin 給刪掉，否則會因為 / 也用轉址，發生多重轉址。
+        session()->removeTempdata('magicLogin');
+
         return redirect()->to('/')
             ->with('message', 'Password changed successfully');
     }

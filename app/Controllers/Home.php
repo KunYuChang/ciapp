@@ -8,6 +8,12 @@ class Home extends BaseController
     {
         // $this->sendTestEmail();
 
+        // 將重設密碼轉址到自定義的頁面
+        if (session('magicLogin')) {
+            return redirect()->to('set-password')
+                ->with('message', 'Please update your password');
+        }
+
         return view("Home/index");
     }
 
