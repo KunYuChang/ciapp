@@ -94,6 +94,15 @@ class Articles extends BaseController
             ->withInput();
     }
 
+    public function delete($id)
+    {
+        $article = $this->getArticleOr404($id);
+
+        return view("Articles/delete", [
+            "article" => $article
+        ]);
+    }
+
     private function getArticleOr404($id): Article
     {
         $article = $this->model->find($id);
