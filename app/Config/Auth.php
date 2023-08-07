@@ -26,11 +26,14 @@ class Auth extends ShieldAuth
     /**
      * ////////////////////////////////////////////////////////////////////
      * AUTHENTICATION
+     * 
+     * 備註 : 可以從 $views 的 value 找到功能對應的頁面檔案位置
+     * 
      * ////////////////////////////////////////////////////////////////////
      */
     public array $views = [
         'login'                       => '\CodeIgniter\Shield\Views\login',
-        'register'                    => '\CodeIgniter\Shield\Views\register',
+        'register'                    => '\App\Views\Auth\register',
         'layout'                      => '\CodeIgniter\Shield\Views\layout',
         'action_email_2fa'            => '\CodeIgniter\Shield\Views\email_2fa_show',
         'action_email_2fa_verify'     => '\CodeIgniter\Shield\Views\email_2fa_verify',
