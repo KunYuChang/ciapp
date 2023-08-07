@@ -9,6 +9,8 @@
 
 <?php if (auth()->loggedIn()) : ?>
 
+    <p>Hello <?= esc(auth()->user()->first_name) ?></p>
+
     <a href="<?= url_to("logout") ?>">Log out</a>
 
 <?php else : ?>
