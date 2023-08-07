@@ -42,6 +42,8 @@ $routes->get('/articles/(:num)/delete', 'Articles::confirmDelete/$1');
 
 $routes->resource("articles", ["placeholder" => "(:num)"]);
 
+service('auth')->routes($routes);
+
 /*
  * --------------------------------------------------------------------
  * 其他路由
