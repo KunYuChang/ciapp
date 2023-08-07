@@ -6,43 +6,15 @@ use CodeIgniter\Config\BaseConfig;
 
 class Email extends BaseConfig
 {
-    public string $fromEmail  = '';
-    public string $fromName   = '';
+    public string $fromEmail  = 'noreply@example.com';
+    public string $fromName   = 'CI App';
     public string $recipients = '';
-
-    /**
-     * The "user agent"
-     */
     public string $userAgent = 'CodeIgniter';
-
-    /**
-     * The mail sending protocol: mail, sendmail, smtp
-     */
-    public string $protocol = 'mail';
-
-    /**
-     * The server path to Sendmail.
-     */
+    public string $protocol = 'smtp';
     public string $mailPath = '/usr/sbin/sendmail';
-
-    /**
-     * SMTP Server Address
-     */
     public string $SMTPHost = '';
-
-    /**
-     * SMTP Username
-     */
     public string $SMTPUser = '';
-
-    /**
-     * SMTP Password
-     */
     public string $SMTPPass = '';
-
-    /**
-     * SMTP Port
-     */
     public int $SMTPPort = 25;
 
     /**
@@ -73,7 +45,7 @@ class Email extends BaseConfig
     /**
      * Type of mail, either 'text' or 'html'
      */
-    public string $mailType = 'text';
+    public string $mailType = 'html';
 
     /**
      * Character set (utf-8, iso-8859-1, etc.)
