@@ -29,7 +29,7 @@ $routes->set404Override();
  */
 
 // 指定預設路由可提高效能，因為我們不必掃描目錄。
-// $routes->get('/', 'Home::index');
+$routes->get('/', 'Home::index');
 // $routes->get('/articles', 'Articles::index');
 // $routes->get('/articles/(:num)', 'Articles::show/$1');
 // $routes->get('/articles/new', 'Articles::new', ["as" => "new_article"]);

@@ -76,8 +76,9 @@ class Auth extends ShieldAuth
      * --------------------------------------------------------------------
      * Redirect URLs
      * --------------------------------------------------------------------
-     * The default URL that a user will be redirected to after various auth
-     * auth actions. This can be either of the following:
+     * 用戶經過各種身份驗證後將被重定向到的默認 URL
+     * 
+     * This can be either of the following:
      *
      * 1. An absolute URL. E.g. http://example.com OR https://example.com
      * 2. A named route that can be accessed using `route_to()` or `url_to()`
@@ -89,7 +90,7 @@ class Auth extends ShieldAuth
     public array $redirects = [
         'register'    => '/',
         'login'       => '/',
-        'logout'      => 'login',
+        'logout'      => '/',
         'force_reset' => '/',
     ];
 
