@@ -12,10 +12,10 @@ class Email extends BaseConfig
     public string $userAgent = 'CodeIgniter';
     public string $protocol = 'smtp';
     public string $mailPath = '/usr/sbin/sendmail';
-    public string $SMTPHost = '';
-    public string $SMTPUser = '';
-    public string $SMTPPass = '';
-    public int $SMTPPort = 25;
+    public string $SMTPHost = 'your_host';
+    public string $SMTPUser = 'your_username';
+    public string $SMTPPass = 'your_password';
+    public int $SMTPPort = 587;
 
     /**
      * SMTP Timeout (in seconds)
