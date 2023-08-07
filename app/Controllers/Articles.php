@@ -37,7 +37,8 @@ class Articles extends BaseController
     public function create()
     {
         $model = new ArticleModel;
-        $id = $model->insert($this->request->getPost());
+        $article = new Article($this->request->getPost());
+        $id = $model->insert($article);
 
         if ($id === false) {
             return redirect()->back()
@@ -62,9 +63,19 @@ class Articles extends BaseController
     public function update($id)
     {
         $model = new ArticleModel;
-        $isUpdateSuccessful = $model->update($id, $this->request->getPost());
+        $article = $model->find($id);
 
-        if ($isUpdateSuccessful) {
+        // 使用請求物件 (Request) 中的 POST 資料，來填充 $article 物件的屬性
+        $article->fill($this->request->getPost());
+
+        // 檢查 $article 物件是否有修改過。 (如果沒有做這個檢查，會噴錯)
+        if (!$article->hasChanged()) {
+            return redirect()->back()
+                ->with("message", "Nothing to update.");
+        }
+
+        // 如果有修改過，儲存更新後的 $article 物件到資料庫
+        if ($model->save($article)) {
             return redirect()->to("articles/$id")
                 ->with("message", "Article updated.");
         }
