@@ -18,7 +18,7 @@
 <?php endif; ?>
 
 <!-- Form -->
-<?= form_open("articles/update/" . $article["id"]) ?>
+<?= form_open("articles/update/" . $article->id) ?>
 
 <?= $this->include("Articles/form") ?>
 
