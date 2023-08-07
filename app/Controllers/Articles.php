@@ -77,6 +77,8 @@ class Articles extends BaseController
         // 使用請求物件 (Request) 中的 POST 資料，來填充 $article 物件的屬性
         $article->fill($this->request->getPost());
 
+        $article->__unset("_method");
+
         // 檢查 $article 物件是否有修改過。 (如果沒有做這個檢查，會噴錯)
         if (!$article->hasChanged()) {
             return redirect()->back()
